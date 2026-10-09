@@ -1,0 +1,8 @@
+node_modules/
+releases/
+logic-test-results.json
+*.log
+__pycache__/
+.DS_Store
+*.tar.gz
+frontline-zero-save.json

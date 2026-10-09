@@ -1,0 +1,46 @@
+FRONTLINE ZERO — fullscreen and optional installed-app edition
+
+LOCAL FILE / NO INTERNET
+1. Download index.html to your phone.
+2. Open the file in a browser that permits local HTML and WebGL.
+3. Rotate the phone to landscape.
+4. Tap FULLSCREEN, or ENTER LOBBY and DEPLOY NOW.
+The game requests immersive fullscreen and landscape orientation when supported.
+If the browser refuses orientation lock, rotate manually. If it refuses fullscreen,
+the game remains playable in its browser tab. Wake lock is optional.
+
+INSTALL ON ANDROID HOME SCREEN
+This ZIP is an install-ready PWA source bundle, not an APK installer.
+1. Extract every file together. Keep the filenames unchanged.
+2. Open the live installation address: https://frontline-zero-chetan.clearisle.chatgpt.site
+   Or serve the folder from another HTTPS static website. No application backend is needed.
+   A file:// address cannot install this PWA or register its offline cache.
+3. Open the HTTPS address in a compatible Android browser.
+4. Wait for "Offline files saved" on the menu.
+5. Tap INSTALL APP when offered, or use browser menu > Install app / Add to Home screen.
+6. Launch FRONTLINE ZERO from its home-screen icon. Fullscreen is requested by the manifest.
+7. After offline caching succeeds, gameplay requires no server connection.
+Installation, fullscreen and orientation support vary by browser and device.
+Cache eviction or clearing browser data can remove offline files and saves.
+
+FILES
+index.html — complete game, embedded Three.js, fullscreen and app support
+manifest.webmanifest — app identity, fullscreen display, landscape orientation
+sw.js — optional HTTPS offline caching
+icon-192.png / icon-512.png — generated app icons
+
+SAVE DATA
+Local-file and HTTPS-installed editions may have separate saves.
+Use SETTINGS > EXPORT SAVE and IMPORT SAVE to transfer progress.
+
+STATUS
+This is playable release 2, not the completed AAA master specification.
+The previous game logic regression checks and added app-shell simulations pass.
+Android installation, real fullscreen rendering, multitouch and offline relaunch
+have not been tested on an actual Android device.
+
+RELEASE 2 CHANGES
+Left and right fire buttons support independent multitouch holds.
+Procedural surface texture and bump detail, sun and sky contrast, gradient sky
+with sun/clouds, contact-shadow decals, trucks and drum props, building signage,
+bevelled weapon receivers, visible gloves and muzzle flashes.
