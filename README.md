@@ -1,6 +1,6 @@
 # FRONTLINE ZERO
 
-A mobile-first procedural offline FPS built with Three.js and vanilla JavaScript. **Playable release 2**; this is an early playable game, not the completed AAA master specification.
+A mobile-first procedural offline FPS built with Three.js and vanilla JavaScript. **Playable release 3**; this is an early playable game, not the completed AAA master specification.
 
 ## Play locally
 
@@ -20,7 +20,7 @@ Serve these files together over HTTPS:
 
 Wait for **Offline files saved**, then select **INSTALL APP** or your browser's **Install app / Add to Home screen** menu. The app manifest requests fullscreen and landscape orientation. The optional service worker caches the game for subsequent offline launches. A `file://` URL cannot install this PWA.
 
-The current private hosted edition is at [frontline-zero-chetan.clearisle.chatgpt.site](https://frontline-zero-chetan.clearisle.chatgpt.site). The local file's **GET INSTALLABLE APP** button opens that address. Change `installURL` in `app-mode.js` if deploying elsewhere.
+Play the public GitHub Pages edition at [frontline-zero-chetan.clearisle.chatgpt.site](https://chetan-speck.github.io/frontline-zero/). The local file's **GET INSTALLABLE APP** button opens that address. Change `installURL` in `app-mode.js` if deploying elsewhere.
 
 When publishing changed game files, change the cache version in `sw.js`. Close and reopen the installed app after updates. Browser cache eviction can remove offline files. Local and hosted editions may use separate save storage; transfer progress using Settings → Export Save / Import Save.
 
@@ -29,9 +29,13 @@ When publishing changed game files, change the cache version in `sw.js`. Close a
 - Five seeded procedural arena themes.
 - Team Deathmatch, Free-for-All, Gun Game, Sniper Only, Survival, Training Range and Custom Match.
 - Walking, sprinting, jumping, momentum-based bunny hopping, air strafing, crouching, sliding and continuous-ramp stair collision.
-- Eight firearms, ADS, sniper scope, recoil, reloads, shotgun pellets, ray-based damage and combat knife.
+- Eight detailed procedural firearms, aligned iron/red-dot sights, true angular 4×/6× scoped zoom, recoil, reloads, shotgun pellets, ray-based damage and combat knife.
 - Frag, smoke and flash grenades; smoke affects line of sight.
 - Grid-navigation bots with perception, short-term memory, strafing and simplified tactical behavior.
+- Automatic mouse/keyboard detection, hidden touch controls on PC, right-mouse ADS, left/right peeking with cover checks, plus a saved input override.
+- Original inline SVG icon HUD and military menu styling.
+- Bundled Three.js r160 Sky shader and quarter-resolution HDR atmospheric bloom (off on low presets and unsupported GPUs).
+- Layered procedural gun audio with caliber profiles, filtered report, mechanism and reverberation tail; synthetic approximations, not recorded weapon sounds.
 - Editable touch HUD, left and right fire buttons, multiple pointer tracking, sensitivity and graphics settings.
 - Persistent XP, mastery, loadouts, statistics, saved layouts and save export/import.
 - Procedural surface textures, brighter sun/sky contrast, contact shadows, weather, lighting cycle, environmental signage and props, detailed first-person guns, gloves and muzzle flashes.
@@ -41,17 +45,17 @@ When publishing changed game files, change the cache version in `sw.js`. Close a
 
 The world is stylized procedural geometry. Bot navigation and tactics are simplified. The full requested weapon roster, advanced vaulting and ladders, ballistic sniper drop, extensive character customization, complete attachment roster, achievements and several other systems from the original specification are not implemented. Custom Match is an adjustable deathmatch variant. The suppressor changes geometry but does not yet simulate sound suppression. Shotgun hit-rate reporting counts pellet hits and can exceed 100%.
 
-Simulation tests do **not** verify WebGL rendering, shader compilation, real mobile multitouch, installed-app behavior, offline relaunch on Android, or sustained FPS. No AAA realism or device performance guarantee is claimed.
+The added simulation checks cover desktop/touch switching, peeking obstruction and sight projection for all eight weapons. Simulation tests do **not** verify WebGL rendering, shader compilation, real mobile multitouch, installed-app behavior, offline relaunch on Android, or sustained FPS. No AAA realism or device performance guarantee is claimed.
 
 ## Controls
 
 Touch: move with the left joystick, drag the right-side look region, and use either fire button. Edit, resize and save buttons in **Settings → Edit Touch HUD**.
 
-Desktop: WASD move; mouse look and left click fire; Space jump; Shift sprint; Ctrl crouch; C slide; R reload; Q swap; E ADS; G throw; T grenade type; V knife; F supply; Esc pause.
+Desktop: WASD move; mouse look and left click fire; Space jump; Shift sprint; Ctrl crouch; C slide; R reload; X / 2 swap; right mouse / Z ADS; Q / E peek; G throw; T grenade type; V knife; F supply; Esc pause.
 
 ## Editable source
 
-`game.js` contains the game systems. `shell.html` contains the markup and styles. `app-mode.js` handles fullscreen and optional installation. `vendor/three.min.js` is the bundled classic Three.js r160 build. `index.html` is the committed ready-to-play artifact.
+`game.js` contains the game systems. `shell.html` contains the markup and styles. `graphics.js` implements the bloom pipeline. `vendor/Sky.js` is the MIT Three.js Sky example adapted to a classic script. `app-mode.js` handles fullscreen and optional installation. `vendor/three.min.js` is the bundled classic Three.js r160 build. `index.html` is the committed ready-to-play artifact.
 
 Rebuild using Python 3 (development only):
 

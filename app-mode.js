@@ -6,7 +6,7 @@ const status=document.querySelector('#appStatus');
 const hint=document.querySelector('#fullscreenHint');
 const isHosted=location.protocol==='https:'||(['localhost','127.0.0.1','[::1]'].includes(location.hostname)&&location.protocol==='http:');
 const installed=()=>matchMedia('(display-mode: fullscreen)').matches||matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
-const installURL='https://frontline-zero-chetan.clearisle.chatgpt.site';
+const installURL='https://chetan-speck.github.io/frontline-zero/';
 let installPrompt=null,wakeLock=null,cacheReady=false;
 function announce(message){status.textContent=message;}
 async function holdScreen(){if(!('wakeLock' in navigator)||document.hidden)return;try{if(!wakeLock)wakeLock=await navigator.wakeLock.request('screen');wakeLock.addEventListener('release',()=>{wakeLock=null;},{once:true});}catch(e){/* Wake lock is optional and may be unavailable on file URLs. */}}

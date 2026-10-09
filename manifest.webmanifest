@@ -2,7 +2,7 @@
   "id":"./",
   "name":"FRONTLINE ZERO",
   "short_name":"FRONTLINE ZERO",
-  "description":"Offline procedural first-person shooter — playable release 1.",
+  "description":"Offline procedural first-person shooter — playable release 3.",
   "start_url":"./index.html",
   "scope":"./",
   "display":"fullscreen",
